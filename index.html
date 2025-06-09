@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火焰系統</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>火焰紀錄系統</h1>
+    <p>這裡是你和自己相處的一小塊空間。<br>
+        當你想記下內在的狀態時，它會靜靜地陪著你。</p>
+    <hr>
+    <p>請你告訴我你現在的狀態</p>
+
+    <button onclick="selectFlame('Red')">🔴 紅火</button>
+    <button onclick="selectFlame('Orange')">🟠 橘火</button>
+    <button onclick="selectFlame('Purple')">🟣 紫火</button>
+    <button onclick="selectFlame('Blue')">🔵 藍火</button>
+    <button onclick="selectFlame('Black')">⚫ 黑火</button>
+
+    <p style="margin-top: 20px;">想說些什麼？</p>
+    <textarea id="reason" rows="4" style="width: 100%;"></textarea>
+
+    <script>
+        function selectFlame(flame) {
+            const reason = document.getElementById("reason")?.value || "(未輸入)";
+
+            if (flame === 'Black' || flame === 'Blue') {
+                let msg = (flame === 'Black')
+                    ? "⚫ 黑火紀錄：\n\n你願意記下來，就是一種力量。\n我陪你。"
+                    : "🔵 藍火紀錄：\n\n你已經很努力了，現在可以先放下、先休息。";
+
+                alert(msg + "\n\n你寫下的話：\n" + reason);
+            } else {
+                alert("你選擇了: " + flame + " 火\n\n你寫下的話：\n" + reason);
+            }
+        }
+    </script>
+</body>
+
+</html>
